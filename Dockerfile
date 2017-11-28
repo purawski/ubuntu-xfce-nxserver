@@ -37,14 +37,14 @@ RUN apt-get update \
 RUN curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o code_1.18.0-1510145176_amd64.deb 
 RUN dpkg -i code_1.18.0-1510145176_amd64.deb \
     && rm code_1.18.0-1510145176_amd64.deb \
-    && curl http://download.nomachine.com/download/5.3/Linux/nomachine_5.3.12_10_amd64.deb -o /nomachine.deb \
+    && curl http://download.nomachine.com/download/6.0/Linux/nomachine_6.0.62_6_amd64.deb -o /nomachine.deb \
     && dpkg -i /nomachine.deb \
     && rm /nomachine.deb \
     && mkdir /root/.config \
     && apt-get autoremove \
     && apt-get autoclean 
 
-EXPOSE 4000
+EXPOSE 22 4000
 
 #COPY xfce4 /root/.config/xfce4
 COPY scripts /scripts
