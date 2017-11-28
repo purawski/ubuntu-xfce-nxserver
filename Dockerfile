@@ -24,6 +24,7 @@ RUN apt-get update \
         bash-completion \
         vim git \
 	net-tools \
+	inetutils-ping \
 	openssh-server \
         cups \
         xfce4 \
