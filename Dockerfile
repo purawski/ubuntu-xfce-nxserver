@@ -38,8 +38,10 @@ RUN apt-get update \
         remmina \
 #        code \
     && rm /etc/apt/sources.list.d/google.list 
-RUN curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o code_1.18.0-1510145176_amd64.deb 
-RUN dpkg -i code_1.18.0-1510145176_amd64.deb \
+#RUN curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o code_1.18.0-1510145176_amd64.deb 
+#RUN dpkg -i code_1.18.0-1510145176_amd64.deb \
+RUN curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o code_1.18.1-1510857349_amd64.deb
+RUN dpkg -i code_1.18.1-1510857349_amd64.deb \
     && rm code_1.18.0-1510145176_amd64.deb \
     && curl http://download.nomachine.com/download/6.0/Linux/nomachine_6.0.62_6_amd64.deb -o /nomachine.deb \
     && dpkg -i /nomachine.deb \
