@@ -23,9 +23,12 @@ RUN apt-get update \
         sudo \
         bash-completion \
         vim git \
+	net-tools \
+	openssh-server \
         cups \
         xfce4 \
         xfce4-whiskermenu-plugin \
+	xfce4-terminal \
         terminator \
         google-chrome-stable \
         firefox \
