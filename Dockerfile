@@ -36,14 +36,15 @@ RUN apt-get update \
         pelican \
         wget \
         remmina \
+	xterm \
 #        code \
     && rm /etc/apt/sources.list.d/google.list 
 #RUN curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o code_1.18.0-1510145176_amd64.deb 
 #RUN dpkg -i code_1.18.0-1510145176_amd64.deb \
-RUN curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o code_1.18.1-1510857349_amd64.deb
-RUN dpkg -i code_1.18.1-1510857349_amd64.deb \
-    && rm code_1.18.0-1510145176_amd64.deb \
-    && curl http://download.nomachine.com/download/6.0/Linux/nomachine_6.0.62_6_amd64.deb -o /nomachine.deb \
+RUN curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o code_amd64.deb
+RUN dpkg -i code_amd64.deb \
+    && rm code_amd64.deb \
+    && curl http://download.nomachine.com/download/6.0/Linux/nomachine_6.0.66_2_amd64.deb -o /nomachine.deb \
     && dpkg -i /nomachine.deb \
     && rm /nomachine.deb \
     && mkdir /root/.config \
@@ -52,7 +53,8 @@ RUN dpkg -i code_1.18.1-1510857349_amd64.deb \
 
 EXPOSE 22 4000
 
-#COPY xfce4 /root/.config/xfce4
+COPY config /root/.config
 COPY scripts /scripts
+COPY config/terminator root/.config/
 
 ENTRYPOINT ["/scripts/init.sh"]
