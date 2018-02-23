@@ -44,7 +44,7 @@ RUN apt-get update \
 RUN curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o code_amd64.deb
 RUN dpkg -i code_amd64.deb \
     && rm code_amd64.deb \
-    && curl http://download.nomachine.com/download/6.0/Linux/nomachine_6.0.66_2_amd64.deb -o /nomachine.deb \
+    && curl http://download.nomachine.com/download/6.0/Linux/nomachine_6.0.78_1_amd64.deb -o /nomachine.deb \
     && dpkg -i /nomachine.deb \
     && rm /nomachine.deb \
     && mkdir /root/.config \
