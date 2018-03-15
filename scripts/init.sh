@@ -13,5 +13,8 @@ if [[ ! -d $HOME/.config/xfce4 ]]; then
     mv /root/.config/xfce4 $HOME/.config/
     chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.config/
 fi
-
+if [[ ! -d $HOME/.config/terminator ]]; then
+    mv /root/.config/terminator $HOME/.config/
+    chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.config/
+fi
 /scripts/launch.sh
